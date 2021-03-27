@@ -1,33 +1,34 @@
 package Model;
 
+import java.util.Scanner;
+
 public  class AccountOperations  {
-    public float balance = AccountDatails.getBalance();
-    private float same ;
+    private float amount;
 
-
-
-
-    public void setDeposit(float newBalance) {
-        balance = newBalance + balance;
+    private void Numbers(){
+        var input = new Scanner(System.in);
+            while (!input.hasNextInt()) {
+                System.out.println("That's not a number!");
+                input.next();
+            }
+        amount = input.nextInt();
     }
 
-    public float getDeposit() {
-        return balance;
+
+    public void setDeposit() {
+         Numbers();
+        AccountDatails.balance = amount + AccountDatails.balance;
+        System.out.println("now you have in your account " + AccountDatails.balance + " $");
     }
 
-    public void setWithdraw(float amountWith) {
-        if (amountWith < balance) {
-            balance = balance - amountWith;
+    public void setWithdraw() {
+          Numbers();
+        if (amount < AccountDatails.balance) {
+            AccountDatails.balance = AccountDatails.balance - amount;
+        } else{
+            System.out.println("You don't have enough money to complete this operation ");}
+        System.out.println("now you have in your account " + AccountDatails.balance + " $");
 
-        } else
-            same = balance;
-
-    }
-    public float getWithdraw() {
-        if (balance == same)
-            System.out.println("You don't have enough money to complete this operation ");
-
-        return balance;
     }
 
 }

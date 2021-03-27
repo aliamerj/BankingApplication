@@ -1,23 +1,29 @@
 package Model;
 
+import java.util.Scanner;
+
 public class AccountDatails {
+    private Scanner scanner = new Scanner(System.in, "UTF-8");
     private String name;
-    private static float balance;
+    public static float balance;
 
+    public void setName() {
+        name = scanner.nextLine();
+        System.out.println("welcome "+ name);
 
-    public void setName(String name) {
-        this.name =name ;
     }
 
     public String getName(){
         return name ;
     }
 
+
+
     public void setBalance(float balance) {
         this.balance = balance;
     }
 
-    public static float getBalance() {
+    public float getBalance() {
         return balance;
     }
 }
