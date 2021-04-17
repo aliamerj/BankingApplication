@@ -8,7 +8,7 @@ public  class AccountOperations  {
     private void Numbers(){
         var input = new Scanner(System.in);
             while (!input.hasNextInt()) {
-                System.out.println("That's not a number!");
+                System.out.println("please make sure to enter a number !!");
                 input.next();
             }
         amount = input.nextInt();

@@ -5,15 +5,14 @@ import Model.AccountOperations;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
-import org.junit.contrib.java.lang.system.TextFromStandardInputStream;
-import static org.junit.contrib.java.lang.system.TextFromStandardInputStream.emptyStandardInputStream;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
+//TODO : test doesn't  work
 
 
 public class Testing {
     @Rule
-    public final TextFromStandardInputStream systemInMock = emptyStandardInputStream();
-
     AccountDatails accountDatailsTest;
     AccountOperations accountOperationsTest;
     @Before
